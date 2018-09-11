@@ -1,0 +1,28 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "user authentication template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njp16330/auth.git"
+  },
+  "author": "Nisarg Patel <nisargpatel04@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njp16330/auth/issues"
+  },
+  "homepage": "https://github.com/njp16330/auth#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.10",
+    "nodemailer": "^4.6.2",
+    "path": "^0.12.7",
+    "uuid": "^3.2.1"
+  }
+}

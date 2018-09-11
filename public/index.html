@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Authenticate</title>
+
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<form>
+				<label>Email</label>
+				<input id="login-email" type="email" name="email">
+
+				<label>Password</label>
+				<input id="login-password" type="password" name="password">
+
+				<input id="login-submit" type="submit" value="Submit">
+			</form>
+		</div>
+
+		<script>
+			(function(){
+				
+				var submit = document.getElementById('login-submit');
+				submit.onclick = function(e){
+					e.preventDefault();
+
+					var email = document.getElementById('login-email'), password = document.getElementById('login-password');
+
+					fetch('/api/login', {
+						headers: {
+						    'Accept': 'application/json',
+						    'Content-Type': 'application/json'
+					    },
+						method: 'post', body: JSON.stringify({
+							email: email.value, password: password.value
+						})
+					});
+				};
+				
+
+			})()
+		</script>
+	</body>
+</html>

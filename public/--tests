@@ -1,0 +1,36 @@
+--tests
+
+fetch('/api/register', {
+	headers: {
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+    },
+	method: 'post', body: JSON.stringify({
+		email: 'nisarg@altimatech.com', password: 'nisarg', handle: 'nisargAltima'
+	})
+}).then(r => r.json()).then(x => { console.log(x)});
+
+
+fetch('/api/login', {
+	headers: {
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+    },
+	method: 'post', body: JSON.stringify({
+		email: 'nisarg@altimatech.com', password: 'nisarg'
+	})
+}).then(r => r.json()).then(x => { console.log(x)});
+
+fetch('/api/logout', {
+	headers: {
+	    'Accept': 'application/json',
+	    'Content-Type': 'application/json'
+    },
+	method: 'post', body: JSON.stringify({
+		sessionId: 'e6d167c0-36f9-11e8-9421-db87ae9ada85'
+	})
+}).then(r => r.json()).then(x => { console.log(x)});
+
+
+fetch('/api/users').then(function(r){ return r.json(); }).then(function(x){ console.log(x); });
+fetch('/api/sessions').then(function(r){ return r.json(); }).then(function(x){ console.log(x); });
